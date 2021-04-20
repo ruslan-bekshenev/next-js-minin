@@ -1,6 +1,8 @@
 import Document, {Html, Head, Main, NextScript} from 'next/document'
 
+// используется для расширения html, body
 export default class MyDocument extends Document {
+
   render() {
 
     return (
@@ -11,8 +13,8 @@ export default class MyDocument extends Document {
             rel="stylesheet"/>
         </Head>
         <body>
-        <Main/>
-        <NextScript/>
+          <Main/>
+          <NextScript/>
         </body>
       </Html>
     )
