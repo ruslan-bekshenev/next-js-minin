@@ -1,5 +1,6 @@
 import Router from 'next/router'
 import Head from "next/head";
+import {MainLayout} from "../../components/MainLayout";
 export default function Index() {
 
   const linkClickHandler = (e, url = '/') => {
@@ -8,13 +9,8 @@ export default function Index() {
   }
 
   return (
-    <>
-      <Head>
-        <title>О сайте</title>
-      </Head>
+    <MainLayout title={'About'}>
       <h1>About page</h1>
-      <button onClick={linkClickHandler}>Go back to home</button>
-      <button onClick={(e) => linkClickHandler(e, '/posts')}>Go to posts</button>
-    </>
+    </MainLayout>
   )
 }
