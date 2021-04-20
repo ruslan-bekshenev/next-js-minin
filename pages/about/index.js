@@ -1,12 +1,8 @@
 import Router from 'next/router'
 import Head from "next/head";
-import {MainLayout} from "../../components/MainLayout";
-export default function Index() {
+import MainLayout from "../../components/MainLayout";
 
-  const linkClickHandler = (e, url = '/') => {
-    console.log(url)
-    Router.push(url)
-  }
+export default function About() {
 
   return (
     <MainLayout title={'About'}>
