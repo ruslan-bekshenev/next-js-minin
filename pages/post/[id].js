@@ -1,8 +1,20 @@
-import {useRouter} from "next/router";
+import MainLayout from "../../components/MainLayout";
 
-export default function Post() {
-  const router = useRouter()
+export default function Post({ post }) {
   return <>
-    <h1>Post id {router.query.id}</h1>
+    <MainLayout title={post.title}>
+      <h1>Post id {post.title}</h1>
+      <p>{post.body}</p>
+      <Link><a></a></Link>
+    </MainLayout>
   </>
+}
+
+Post.getInitialProps = async (ctx) => {
+  const response = await fetch(`http://localhost:4200/posts/${ctx.query.id}`)
+  const post = await response.json()
+
+  return {
+    post
+  }
 }
