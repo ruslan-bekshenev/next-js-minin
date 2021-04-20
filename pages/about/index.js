@@ -1,5 +1,5 @@
-import { Fragment } from 'react'
 import Router from 'next/router'
+import Head from "next/head";
 export default function Index() {
 
   const linkClickHandler = (e, url = '/') => {
@@ -8,10 +8,13 @@ export default function Index() {
   }
 
   return (
-    <Fragment>
+    <>
+      <Head>
+        <title>О сайте</title>
+      </Head>
       <h1>About page</h1>
       <button onClick={linkClickHandler}>Go back to home</button>
       <button onClick={(e) => linkClickHandler(e, '/posts')}>Go to posts</button>
-    </Fragment>
+    </>
   )
 }
